@@ -19,6 +19,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   fonts:
-    - family: YeonSung
+    - family: VT323
       fonts:
-        - asset: fonts/YeonSung-Regular.ttf
+        - asset: fonts/VT323-Regular.ttf

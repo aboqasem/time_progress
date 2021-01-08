@@ -20,10 +20,10 @@ class ProgressCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(title, style: TextStyle(fontFamily: 'YeonSung')),
+                Text(title, style: TextStyle(fontFamily: 'VT323')),
                 Text(
                   '${progress.toStringAsFixed(8)}%',
-                  style: TextStyle(fontFamily: 'YeonSung'),
+                  style: TextStyle(fontFamily: 'VT323'),
                 ),
               ],
             ),
