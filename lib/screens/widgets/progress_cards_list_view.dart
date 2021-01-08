@@ -12,7 +12,7 @@ class ProgressCardListView extends StatefulWidget {
 class _ProgressCardListViewState extends State<ProgressCardListView> {
   @override
   void initState() {
-    Timer.periodic(Duration(milliseconds: 50), (timer) {
+    Timer.periodic(Duration(milliseconds: 100), (timer) {
       setState(() {});
     });
     super.initState();
