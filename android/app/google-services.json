@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "724781777802",
+    "project_id": "time-progress-ec84a",
+    "storage_bucket": "time-progress-ec84a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724781777802:android:8fff31df8b05f4d3057e73",
+        "android_client_info": {
+          "package_name": "aboqasem.time_progress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724781777802-pettngsm3ofjhs6gn5a8egeaq1sp3p89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhjF0DBsfJxaAaFVqol-c2_xM4oy8nt5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724781777802-pettngsm3ofjhs6gn5a8egeaq1sp3p89.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "724781777802-6biao0u4ab863f73b9aadqj6od9qhd2j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "aboqasem.timeProgress"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
