@@ -1,28 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:time_progress/screens/widgets/progress_cards_list_view.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Progress'),
+        title: Text('Time Progress'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text(
-              'Hello, World!',
-              style: TextStyle(fontSize: 12.0.sp),
-            ),
-          )
-        ],
+      body: SafeArea(
+        child: ProgressCardListView(),
       ),
     );
   }
