@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:time_progress/screens/home_screen.dart';
+import 'package:time_progress/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Time Progress',
-              theme: ThemeData.dark(),
+              theme: themeData,
               home: HomeScreen(),
             );
           },
