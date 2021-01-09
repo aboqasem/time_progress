@@ -3,10 +3,12 @@ import 'package:sizer/sizer.dart';
 
 class ProgressCard extends StatelessWidget {
   final String title;
+  final String description;
   final double progress;
 
   ProgressCard({
     @required this.title,
+    @required this.description,
     @required this.progress,
   });
 
@@ -20,7 +22,10 @@ class ProgressCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(title, style: TextStyle(fontFamily: 'VT323')),
+                Text(
+                  '$title ($description)',
+                  style: TextStyle(fontFamily: 'VT323'),
+                ),
                 Text(
                   '${progress.toStringAsFixed(8)}%',
                   style: TextStyle(fontFamily: 'VT323'),

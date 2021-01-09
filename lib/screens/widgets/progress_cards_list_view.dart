@@ -45,22 +45,27 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
       children: [
         ProgressCard(
           title: 'Year',
+          description: '${beginYear.year} - ${endYear.year}',
           progress: progress(beginYear, endYear),
         ),
         ProgressCard(
           title: 'Month',
+          description: '${beginMonth.month} - ${endMonth.month}',
           progress: progress(beginMonth, endMonth),
         ),
         ProgressCard(
           title: 'Day',
+          description: '${beginDay.day} - ${endDay.day}',
           progress: progress(beginDay, endDay),
         ),
         ProgressCard(
           title: 'Minute',
+          description: '${beginMinute.minute} - ${endMinute.minute}',
           progress: progress(beginMinute, endMinute),
         ),
         ProgressCard(
           title: 'Second',
+          description: '${beginSecond.second} - ${endSecond.second}',
           progress: progress(beginSecond, endSecond),
         ),
       ],
