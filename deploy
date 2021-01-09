@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -e
+
+flutter build web
+
+cd build/web/
+
+sed -i'.b' -e '4s/.*/    <base href="\/time_progress\/" \/>/' index.html
+
+rm index.html.b
+
+git init
+
+git add -A
+
+git commit -m 'Deploy'
+
+git push -f git@github.com:aboqasem/time_progress.git main:gh-pages
+
+cd -
+
+flutter clean
+
+flutter pub get
