@@ -11,7 +11,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    AdService.loadBannerAd();
+    try {
+      AdService.loadBannerAd();
+    } catch (e) {
+      print('Ads not supported.');
+    }
   }
 
   @override
@@ -28,7 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    AdService.dispose();
+    try {
+      AdService.dispose();
+    } catch (e) {
+      print('Ads not supported.');
+    }
     super.dispose();
   }
 }

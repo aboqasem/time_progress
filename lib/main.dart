@@ -7,7 +7,11 @@ import 'package:time_progress/theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await FirebaseAdMob.instance.initialize(appId: AdService.appId);
+  try {
+    await FirebaseAdMob.instance.initialize(appId: AdService.appId);
+  } catch (e) {
+    print('Ads not supported.');
+  }
   runApp(MyApp());
 }
 
