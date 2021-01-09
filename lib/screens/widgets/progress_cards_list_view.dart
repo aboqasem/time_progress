@@ -31,6 +31,10 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
     final DateTime beginDay = DateTime(now.year, now.month, now.day);
     final DateTime endDay = DateTime(now.year, now.month, now.day + 1);
 
+    final DateTime beginHour = DateTime(now.year, now.month, now.day, now.hour);
+    final DateTime endHour =
+        DateTime(now.year, now.month, now.day, now.hour + 1);
+
     final DateTime beginMinute =
         DateTime(now.year, now.month, now.day, now.hour, now.minute);
     final DateTime endMinute =
@@ -57,6 +61,11 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
           title: 'Day',
           description: '${beginDay.day} - ${endDay.day}',
           progress: progress(beginDay, endDay),
+        ),
+        ProgressCard(
+          title: 'Hour',
+          description: '${beginHour.hour} - ${endHour.hour}',
+          progress: progress(beginHour, endHour),
         ),
         ProgressCard(
           title: 'Minute',
