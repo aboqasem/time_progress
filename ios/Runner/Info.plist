@@ -12,8 +12,6 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>Time Progress</string>
-	<key>GADApplicationIdentifier</key>
-<string>ca-app-pub-4235875725893331~2380755170</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

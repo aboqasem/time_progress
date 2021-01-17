@@ -1,17 +1,9 @@
-import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:time_progress/screens/home_screen.dart';
-import 'package:time_progress/services/ad_service.dart';
 import 'package:time_progress/theme.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  try {
-    await FirebaseAdMob.instance.initialize(appId: AdService.appId);
-  } catch (e) {
-    print('Ads not supported.');
-  }
+void main() {
   runApp(MyApp());
 }
 

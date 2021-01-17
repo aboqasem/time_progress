@@ -31,9 +31,6 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
-  pod 'Firebase/Analytics'
-  pod 'Google-Mobile-Ads-SDK'
-
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
 
