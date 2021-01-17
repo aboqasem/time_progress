@@ -1,5 +1,7 @@
+import 'dart:math';
+
+import 'package:time_progress/extensions/responsive_length.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 class ProgressCard extends StatelessWidget {
   final String title;
@@ -16,7 +18,7 @@ class ProgressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: EdgeInsets.all(2.0.h),
+        padding: EdgeInsets.all(2.0.vh(context)),
         child: Column(
           children: [
             Row(
@@ -24,15 +26,23 @@ class ProgressCard extends StatelessWidget {
               children: [
                 Text(
                   '$title ($description)',
-                  style: TextStyle(fontFamily: 'VT323'),
+                  style: TextStyle(
+                    fontFamily: 'VT323',
+                    fontSize: min(3.75.vw(context), 30),
+                    color: Colors.white,
+                  ),
                 ),
                 Text(
                   '${progress.toStringAsFixed(8)}%',
-                  style: TextStyle(fontFamily: 'VT323'),
+                  style: TextStyle(
+                    fontFamily: 'VT323',
+                    fontSize: min(3.75.vw(context), 30),
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
-            SizedBox(height: 1.0.h),
+            SizedBox(height: 1.0.vh(context)),
             LinearProgressIndicator(value: progress / 100.0),
           ],
         ),
