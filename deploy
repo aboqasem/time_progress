@@ -2,7 +2,7 @@
 
 set -e
 
-flutter build web
+~/sdk/flutter_beta/bin/flutter build web
 
 cd build/web/
 
@@ -20,6 +20,6 @@ git push -f git@github.com:aboqasem/time_progress.git main:gh-pages
 
 cd -
 
-flutter clean
+~/sdk/flutter_beta/bin/flutter clean
 
-flutter pub get
+~/sdk/flutter_beta/bin/flutter pub get
