@@ -6,6 +6,8 @@ set -e
 
 cd build/web/
 
+echo 'tp.aboqasem.dev' >CNAME
+
 git init
 
 git add -A
