@@ -6,10 +6,6 @@ set -e
 
 cd build/web/
 
-sed -i'.b' -e '4s/.*/    <base href="\/time_progress\/" \/>/' index.html
-
-rm index.html.b
-
 git init
 
 git add -A
