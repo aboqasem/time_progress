@@ -18,7 +18,7 @@ class ProgressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: EdgeInsets.all(2.0.vh(context)),
+        padding: EdgeInsets.all(20.0),
         child: Column(
           children: [
             Row(
@@ -40,7 +40,7 @@ class ProgressCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 1.0.vh(context)),
+            SizedBox(height: 10.0),
             LinearProgressIndicator(value: progress / 100.0),
           ],
         ),
