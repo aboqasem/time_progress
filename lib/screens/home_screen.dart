@@ -11,10 +11,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Time Progress',
-          style: TextStyle(
-            fontFamily: 'VT323',
-            fontSize: min(5.0.vw(context), 35),
-          ),
+          style: TextStyle(fontSize: min(5.0.vw(context), 35.0)),
         ),
       ),
       body: SafeArea(

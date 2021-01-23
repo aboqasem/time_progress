@@ -13,7 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Time Progress',
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark().copyWith(
+        textTheme: ThemeData.dark().textTheme.apply(fontFamily: 'VT323'),
+        primaryTextTheme:
+            ThemeData.dark().primaryTextTheme.apply(fontFamily: 'VT323'),
+        accentTextTheme:
+            ThemeData.dark().accentTextTheme.apply(fontFamily: 'VT323'),
+      ),
       home: HomeScreen(),
     );
   }

@@ -27,7 +27,6 @@ class ProgressCard extends StatelessWidget {
                 Text(
                   '$title ($description)',
                   style: TextStyle(
-                    fontFamily: 'VT323',
                     fontSize: min(4.25.vw(context), 30),
                     color: Colors.white,
                   ),
@@ -35,7 +34,6 @@ class ProgressCard extends StatelessWidget {
                 Text(
                   '${progress.toStringAsFixed(8)}%',
                   style: TextStyle(
-                    fontFamily: 'VT323',
                     fontSize: min(4.25.vw(context), 30),
                     color: Colors.white,
                   ),
