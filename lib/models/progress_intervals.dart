@@ -19,7 +19,10 @@ class ProgressIntervals {
   void operator []=(String key, ProgressInterval value) =>
       _intervals[key] = value;
 
-  ProgressInterval remove(String key) => _intervals.remove(key);
+  Future<ProgressInterval> remove(String key) async {
+    await _storage.removeProgressInterval(key);
+    return _intervals.remove(key);
+  }
 
   Iterable<String> get keys => _intervals.keys;
 

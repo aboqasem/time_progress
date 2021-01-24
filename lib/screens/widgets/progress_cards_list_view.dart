@@ -52,19 +52,24 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
 
     return ListView(
       children: [
-        ...List<ProgressCard>.generate(
+        ...List<Widget>.generate(
           _intervals.length,
           (int i) {
             final String title = titles.elementAt(i);
-            return ProgressCard(
-              title: title,
-              description: description(
-                _intervals[title].begin,
-                _intervals[title].end,
-              ),
-              progress: progress(
-                _intervals[title].begin,
-                _intervals[title].end,
+            return GestureDetector(
+              onLongPress: () async {
+                await _intervals.remove(title);
+              },
+              child: ProgressCard(
+                title: title,
+                description: description(
+                  _intervals[title].begin,
+                  _intervals[title].end,
+                ),
+                progress: progress(
+                  _intervals[title].begin,
+                  _intervals[title].end,
+                ),
               ),
             );
           },

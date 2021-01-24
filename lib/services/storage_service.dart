@@ -16,9 +16,14 @@ class StorageService {
     );
   }
 
+  Future<bool> removeProgressInterval(String key) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    return await preferences.remove(key);
+  }
+
   Future<Map<String, ProgressInterval>> retrieveProgressIntervals() async {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
-    final Set<String> keys = preferences.getKeys();
+    final List<String> keys = preferences.getKeys().toList();
 
     final Map<String, ProgressInterval> progressIntervals = {};
     keys.forEach((String key) {
