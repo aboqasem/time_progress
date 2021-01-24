@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
+  intl: ^0.16.1
   url_strategy: ^0.1.1
 
 dev_dependencies:
