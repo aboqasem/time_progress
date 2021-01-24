@@ -18,6 +18,10 @@ class ProgressIntervals {
   void operator []=(String key, ProgressInterval value) =>
       _intervals[key] = value;
 
+  ProgressInterval remove(String key) => _intervals.remove(key);
+
+  Iterable<String> get keys => _intervals.keys;
+
   bool containsKey(String key) => _intervals.containsKey(key);
 
   void addAll(Map<String, ProgressInterval> other) => _intervals.addAll(other);
