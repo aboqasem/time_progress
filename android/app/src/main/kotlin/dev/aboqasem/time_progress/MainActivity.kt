@@ -1,4 +1,4 @@
-package aboqasem.time_progress
+package dev.aboqasem.time_progress
 
 import io.flutter.embedding.android.FlutterActivity
 
