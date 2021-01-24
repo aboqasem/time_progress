@@ -35,7 +35,8 @@ class _ProgressIntervalFormState extends State<ProgressIntervalForm> {
             onChanged: (String value) => title = value,
             validator: (String value) {
               if (value.isEmpty) return 'Please type in a title.';
-              if (_intervals.containsKey(value))
+              if (_intervals.containsKey(value) ||
+                  'YearMonthDayHourMinuteSecond'.contains(value))
                 return 'This title already exists.';
               return null;
             },

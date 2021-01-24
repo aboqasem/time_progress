@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
-DateFormat kFormDateFormat = DateFormat('E, dd-MM-y');
+DateFormat kFormDateFormatter = DateFormat('E, dd-MM-y');
 
-DateFormat kFormTimeFormat = DateFormat('hh:mm a');
+DateFormat kFormTimeFormatter = DateFormat('hh:mm a');
 
-DateFormat kCardDateTimeFormat = DateFormat('E, dd-MM-y hh:mm a');
+DateFormat kCardDateTimeFormatter = DateFormat('EEEE, y/MM/dd hh:mma');

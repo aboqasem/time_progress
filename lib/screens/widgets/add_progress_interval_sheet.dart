@@ -21,9 +21,10 @@ class AddProgressIntervalSheet extends StatelessWidget {
               'Add Progress Interval',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: min(5.0.vw(context), 35.0),
+                fontSize: min(6.0.vw(context), 40.0),
               ),
             ),
+            SizedBox(height: 10.0),
             ProgressIntervalForm(),
           ],
         ),

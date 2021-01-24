@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:time_progress/constants.dart';
 import 'package:time_progress/models/progress_intervals.dart';
 import 'package:time_progress/screens/widgets/progress_card.dart';
 import 'package:time_progress/utils/progress_util.dart';
@@ -89,8 +88,10 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
             final String title = titles.elementAt(i);
             return ProgressCard(
               title: title,
-              description:
-                  '${kCardDateTimeFormat.format(_intervals[title].begin)} - ${kCardDateTimeFormat.format(_intervals[title].end)}',
+              description: description(
+                _intervals[title].begin,
+                _intervals[title].end,
+              ),
               progress: progress(
                 _intervals[title].begin,
                 _intervals[title].end,

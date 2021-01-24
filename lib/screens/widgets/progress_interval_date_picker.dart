@@ -46,7 +46,7 @@ class ProgressIntervalDatePicker extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 PrimaryButton(
-                  title: kFormDateFormat.format(beginDate),
+                  title: kFormDateFormatter.format(beginDate),
                   onPressed: () async {
                     await showModalBottomSheet(
                       context: context,
@@ -58,7 +58,7 @@ class ProgressIntervalDatePicker extends StatelessWidget {
                   },
                 ),
                 PrimaryButton(
-                  title: kFormTimeFormat.format(beginDate),
+                  title: kFormTimeFormatter.format(beginDate),
                   onPressed: () async {
                     await showModalBottomSheet(
                       context: context,
@@ -88,7 +88,7 @@ class ProgressIntervalDatePicker extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 PrimaryButton(
-                  title: kFormDateFormat.format(endDate),
+                  title: kFormDateFormatter.format(endDate),
                   onPressed: () async {
                     await showModalBottomSheet(
                       context: context,
@@ -100,7 +100,7 @@ class ProgressIntervalDatePicker extends StatelessWidget {
                   },
                 ),
                 PrimaryButton(
-                  title: kFormTimeFormat.format(endDate),
+                  title: kFormTimeFormatter.format(endDate),
                   onPressed: () async {
                     await showModalBottomSheet(
                       context: context,
