@@ -9,7 +9,7 @@ class StorageService {
   StorageService._();
 
   Future<bool> storeProgressInterval(String key, ProgressInterval value) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
     return await preferences.setStringList(
       key,
       [value.begin.toString(), value.end.toString()],
@@ -17,22 +17,34 @@ class StorageService {
   }
 
   Future<bool> removeProgressInterval(String key) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
     return await preferences.remove(key);
   }
 
-  Future<Map<String, ProgressInterval>> retrieveProgressIntervals() async {
+  Future<Map<String, ProgressInterval>> get progressIntervals async {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
     final List<String> keys = preferences.getKeys().toList();
 
     final Map<String, ProgressInterval> progressIntervals = {};
     keys.forEach((String key) {
-      final List<String> dates = preferences.getStringList(key);
-      progressIntervals[key] = ProgressInterval(
-        begin: DateTime.parse(dates[0]),
-        end: DateTime.parse(dates[1]),
-      );
+      try {
+        final List<String> dates = preferences.getStringList(key);
+        progressIntervals[key] = ProgressInterval(
+          begin: DateTime.parse(dates[0]),
+          end: DateTime.parse(dates[1]),
+        );
+      } catch (e) {}
     });
     return progressIntervals;
+  }
+
+  Future<bool> storeSnackBarState(bool state) async {
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
+    return await preferences.setBool('SNACK_BAR', state);
+  }
+
+  Future<bool> get snackBarState async {
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
+    return preferences.getBool('SNACK_BAR') ?? false;
   }
 }

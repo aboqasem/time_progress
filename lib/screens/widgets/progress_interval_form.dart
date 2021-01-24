@@ -18,7 +18,6 @@ class ProgressIntervalForm extends StatefulWidget {
 class _ProgressIntervalFormState extends State<ProgressIntervalForm> {
   final ProgressIntervals _intervals = ProgressIntervals.instance;
   final StorageService _storage = StorageService.instance;
-  static bool snackBarShown = false;
   String title;
   DateTime beginDate = DateTime.now();
   DateTime endDate = DateTime.now().add(Duration(minutes: 1));
@@ -106,18 +105,18 @@ class _ProgressIntervalFormState extends State<ProgressIntervalForm> {
               );
               _intervals[title] = interval;
               await _storage.storeProgressInterval(title, interval);
-              if (!snackBarShown)
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    backgroundColor: Colors.tealAccent,
-                    onVisible: () => snackBarShown = true,
-                    content: Text(
-                      'After you\'ve added a progress interval you may remove it by long pressing it!',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: min(3.0.vw(context), 20.0)),
-                    ),
+              if (!await _storage.snackBarState)
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  backgroundColor: Colors.tealAccent,
+                  onVisible: () async =>
+                      await _storage.storeSnackBarState(true),
+                  duration: Duration(seconds: 5),
+                  content: Text(
+                    'After you\'ve added a progress interval you may remove it by long pressing it!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: min(3.0.vw(context), 20.0)),
                   ),
-                );
+                ));
               Navigator.pop(context);
             },
           ),

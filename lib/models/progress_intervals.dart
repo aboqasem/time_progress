@@ -7,7 +7,7 @@ class ProgressIntervals {
   final StorageService _storage = StorageService.instance;
 
   ProgressIntervals._() {
-    _storage.retrieveProgressIntervals().then((progressIntertvals) {
+    _storage.progressIntervals.then((progressIntertvals) {
       addAll(progressIntertvals);
     });
   }
