@@ -23,12 +23,15 @@ class ProgressCard extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '$title ($description)',
-                  style: TextStyle(
-                    fontSize: min(4.25.vw(context), 30),
-                    color: Colors.white,
+                Expanded(
+                  child: Text(
+                    '$title',
+                    style: TextStyle(
+                      fontSize: min(4.25.vw(context), 30),
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 Text(
@@ -39,6 +42,14 @@ class ProgressCard extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            SizedBox(height: 5.0),
+            Text(
+              '$description',
+              style: TextStyle(
+                fontSize: min(4.0.vw(context), 30),
+                color: Colors.white70,
+              ),
             ),
             SizedBox(height: 10.0),
             LinearProgressIndicator(value: progress / 100.0),
