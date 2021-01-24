@@ -6,7 +6,7 @@ set -e
 
 cd build/web/
 
-echo 'tp.aboqasem.dev' >CNAME
+echo 'time-progress.aboqasem.dev' >CNAME
 
 git init
 
