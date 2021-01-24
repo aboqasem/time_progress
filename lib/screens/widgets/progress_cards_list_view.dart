@@ -52,6 +52,23 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
 
     return ListView(
       children: [
+        ...List<ProgressCard>.generate(
+          _intervals.length,
+          (int i) {
+            final String title = titles.elementAt(i);
+            return ProgressCard(
+              title: title,
+              description: description(
+                _intervals[title].begin,
+                _intervals[title].end,
+              ),
+              progress: progress(
+                _intervals[title].begin,
+                _intervals[title].end,
+              ),
+            );
+          },
+        ),
         ProgressCard(
           title: 'Year',
           description: '${beginYear.year} - ${endYear.year}',
@@ -81,23 +98,6 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
           title: 'Second',
           description: '${beginSecond.second} - ${endSecond.second}',
           progress: progress(beginSecond, endSecond),
-        ),
-        ...List<ProgressCard>.generate(
-          _intervals.length,
-          (int i) {
-            final String title = titles.elementAt(i);
-            return ProgressCard(
-              title: title,
-              description: description(
-                _intervals[title].begin,
-                _intervals[title].end,
-              ),
-              progress: progress(
-                _intervals[title].begin,
-                _intervals[title].end,
-              ),
-            );
-          },
         ),
       ],
     );
