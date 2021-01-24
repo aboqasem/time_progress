@@ -15,7 +15,7 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
   @override
   void initState() {
     super.initState();
-    timer = Timer.periodic(Duration(milliseconds: 100), (Timer timer) {
+    timer = Timer.periodic(Duration(milliseconds: 1), (Timer timer) {
       setState(() {});
     });
   }
