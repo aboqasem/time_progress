@@ -4,7 +4,7 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#212121",
-  "theme_color": "#212121",
+  "theme_color": "#64FFDA",
   "description": "Various time progress bars.",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
