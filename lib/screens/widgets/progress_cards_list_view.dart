@@ -11,7 +11,7 @@ class ProgressCardListView extends StatefulWidget {
 }
 
 class _ProgressCardListViewState extends State<ProgressCardListView> {
-  final ProgressIntervals _intervals = ProgressIntervals();
+  final ProgressIntervals _intervals = ProgressIntervals.instance;
   Timer timer;
 
   @override

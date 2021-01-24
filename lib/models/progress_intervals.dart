@@ -1,14 +1,15 @@
 import 'package:time_progress/models/progress_interval.dart';
+import 'package:time_progress/services/storage_service.dart';
 
 class ProgressIntervals {
-  static ProgressIntervals _progressIntervals;
+  static ProgressIntervals instance = ProgressIntervals._();
   final Map<String, ProgressInterval> _intervals = {};
+  final StorageService _storage = StorageService.instance;
 
-  ProgressIntervals._();
-
-  factory ProgressIntervals() {
-    if (_progressIntervals == null) _progressIntervals = ProgressIntervals._();
-    return _progressIntervals;
+  ProgressIntervals._() {
+    _storage.retrieveProgressIntervals().then((progressIntertvals) {
+      addAll(progressIntertvals);
+    });
   }
 
   int get length => _intervals.length;
