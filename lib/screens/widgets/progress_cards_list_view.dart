@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:time_progress/constants.dart';
+import 'package:time_progress/models/progress_intervals.dart';
 import 'package:time_progress/screens/widgets/progress_card.dart';
 import 'package:time_progress/utils/progress_util.dart';
 
@@ -10,6 +12,7 @@ class ProgressCardListView extends StatefulWidget {
 }
 
 class _ProgressCardListViewState extends State<ProgressCardListView> {
+  final ProgressIntervals _intervals = ProgressIntervals();
   Timer timer;
 
   @override
@@ -22,6 +25,7 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
 
   @override
   Widget build(BuildContext context) {
+    final Iterable<String> titles = _intervals.keys;
     final DateTime now = DateTime.now();
 
     final DateTime beginYear = DateTime(now.year);
@@ -78,6 +82,21 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
           title: 'Second',
           description: '${beginSecond.second} - ${endSecond.second}',
           progress: progress(beginSecond, endSecond),
+        ),
+        ...List<ProgressCard>.generate(
+          _intervals.length,
+          (int i) {
+            final String title = titles.elementAt(i);
+            return ProgressCard(
+              title: title,
+              description:
+                  '${kCardDateTimeFormat.format(_intervals[title].begin)} - ${kCardDateTimeFormat.format(_intervals[title].end)}',
+              progress: progress(
+                _intervals[title].begin,
+                _intervals[title].end,
+              ),
+            );
+          },
         ),
       ],
     );
