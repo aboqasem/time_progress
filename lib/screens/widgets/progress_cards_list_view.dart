@@ -56,20 +56,22 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
           _intervals.length,
           (int i) {
             final String title = titles.elementAt(i);
+            final double progress = progressOf(
+              _intervals[title].begin,
+              _intervals[title].end,
+            );
+            final String desctiption = descriptionOf(
+              _intervals[title].begin,
+              _intervals[title].end,
+            );
             return GestureDetector(
               onLongPress: () async {
                 await _intervals.remove(title);
               },
               child: ProgressCard(
                 title: title,
-                description: description(
-                  _intervals[title].begin,
-                  _intervals[title].end,
-                ),
-                progress: progress(
-                  _intervals[title].begin,
-                  _intervals[title].end,
-                ),
+                description: desctiption,
+                progress: progress,
               ),
             );
           },
@@ -77,32 +79,32 @@ class _ProgressCardListViewState extends State<ProgressCardListView> {
         ProgressCard(
           title: 'Year',
           description: '${beginYear.year} - ${endYear.year}',
-          progress: progress(beginYear, endYear),
+          progress: progressOf(beginYear, endYear),
         ),
         ProgressCard(
           title: 'Month',
           description: '${beginMonth.month} - ${endMonth.month}',
-          progress: progress(beginMonth, endMonth),
+          progress: progressOf(beginMonth, endMonth),
         ),
         ProgressCard(
           title: 'Day',
           description: '${beginDay.day} - ${endDay.day}',
-          progress: progress(beginDay, endDay),
+          progress: progressOf(beginDay, endDay),
         ),
         ProgressCard(
           title: 'Hour',
           description: '${beginHour.hour} - ${endHour.hour}',
-          progress: progress(beginHour, endHour),
+          progress: progressOf(beginHour, endHour),
         ),
         ProgressCard(
           title: 'Minute',
           description: '${beginMinute.minute} - ${endMinute.minute}',
-          progress: progress(beginMinute, endMinute),
+          progress: progressOf(beginMinute, endMinute),
         ),
         ProgressCard(
           title: 'Second',
           description: '${beginSecond.second} - ${endSecond.second}',
-          progress: progress(beginSecond, endSecond),
+          progress: progressOf(beginSecond, endSecond),
         ),
       ],
     );
