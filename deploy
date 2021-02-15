@@ -4,20 +4,8 @@ set -e
 
 ~/sdk/flutter_beta/bin/flutter build web
 
-cd build/web/
+netlify deploy --dir=build/web --prod
 
-echo 'time-progress.aboqasem.dev' >CNAME
-
-git init
-
-git add -A
-
-git commit -m 'Deploy'
-
-git push -f git@github.com:aboqasem/time_progress.git main:gh-pages
-
-cd -
+rm -rf build/web/
 
 ~/sdk/flutter_beta/bin/flutter clean
-
-~/sdk/flutter_beta/bin/flutter pub get
